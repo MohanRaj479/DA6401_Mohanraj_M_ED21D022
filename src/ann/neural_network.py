@@ -16,7 +16,6 @@ class NeuralNetwork:
     """
 
     def __init__(self, cli_args):
-        # Bulletproof arg extraction
         def get_arg(key, default):
             if isinstance(cli_args, dict):
                 return cli_args.get(key, default)
@@ -25,7 +24,6 @@ class NeuralNetwork:
         self.input_dim = get_arg('input_dim', 784)  
         self.output_dim = get_arg('output_dim', 10)
         
-        # CRITICAL FIX: Separate Dense and Activations so the TA's get_weights loop doesn't crash!
         self.layers = [] 
         self.activations = [] 
         
@@ -71,7 +69,6 @@ class NeuralNetwork:
 
     def forward(self, X):
         out = X
-        # Apply activation sequentially only after hidden layers
         for i, layer in enumerate(self.layers):
             out = layer.forward(out)
             if i < len(self.activations):
@@ -91,13 +88,13 @@ class NeuralNetwork:
         grad_W_list = []
         grad_b_list = []
 
-        # 1. Backprop Last Layer (No activation)
+        # 1. Backprop Last Layer 
         last_layer = self.layers[-1]
         d_out = last_layer.backward(d_out)
         grad_W_list.append(last_layer.grad_W)
         grad_b_list.append(np.squeeze(last_layer.grad_b))
 
-        # 2. Backprop Hidden Layers (Activation then Dense)
+        # 2. Backprop Hidden Layers 
         for i in range(len(self.layers)-2, -1, -1):
             d_out = self.activations[i].backward(d_out)
             d_out = self.layers[i].backward(d_out)
@@ -157,7 +154,7 @@ class NeuralNetwork:
             "recall": recall_score(y, preds, average='macro', zero_division=0)
         }
 
-    # EXACT TA FORMAT
+    
     def get_weights(self):
         d = {}
         for i, layer in enumerate(self.layers):
@@ -167,7 +164,6 @@ class NeuralNetwork:
 
     def set_weights(self, weight_dict):
         for i, layer in enumerate(self.layers):
-            # Fallback to safely catch old Colab dictionary names just in case
             w_key = f"W{i}" if f"W{i}" in weight_dict else f"layer_{i}_W"
             b_key = f"b{i}" if f"b{i}" in weight_dict else f"layer_{i}_b"
             
