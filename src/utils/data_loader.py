@@ -3,7 +3,6 @@ from sklearn.model_selection import train_test_split
 
 def load_and_prep_data(dataset_name='mnist'):
     """Loads and prepares the dataset, falling back to safe OpenML if Keras is missing."""
-    # 1. Try Keras first (Fastest, standard on Autograders)
     try:
         from keras.datasets import mnist, fashion_mnist
         if dataset_name.lower() == 'mnist':
@@ -15,7 +14,6 @@ def load_and_prep_data(dataset_name='mnist'):
         X_test = X_test.reshape(X_test.shape[0], -1)
         
     except ImportError:
-        # 2. Safe Fallback to OpenML (Bypasses the pandas requirement)
         from sklearn.datasets import fetch_openml
         if dataset_name.lower() == 'mnist':
             X, y = fetch_openml('mnist_784', version=1, return_X_y=True, as_frame=False, parser='liac-arff')
