@@ -39,8 +39,8 @@ class DenseLayer:
         dZ: Gradient of the loss with respect to the output Z.
         Returns dX to be passed to the previous layer.
         """
-        # 1. Compute gradients for weights and biases
-        # Assume dZ is already averaged over the batch size by the loss function
+        # 1. gradients for weights and biases
+        #  dZ is averaged over the batch size 
         self.grad_W = np.dot(self.X_input.T, dZ)
         self.grad_b = np.sum(dZ, axis=0, keepdims=True)
 
