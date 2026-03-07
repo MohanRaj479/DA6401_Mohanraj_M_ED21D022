@@ -1,0 +1,60 @@
+import wandb
+import numpy as np
+
+def run_fashion_transfer_challenge():
+    X_train, y_train_oh, X_val, y_val, X_test, y_test = load_and_prep_data('fashion_mnist')
+
+    if X_train.max() > 1.0:
+        X_train = X_train.astype('float32') / 255.0
+        X_test = X_test.astype('float32') / 255.0
+
+    configs = [
+        {
+            "name": "Config_1", "num_layers": 3, "hidden_neurons": 32,
+            "optimizer": "nag", "lr": 0.001, "wd": 0.0, "epochs": 10
+        },
+        {
+            "name": "Config_2", "num_layers": 4, "hidden_neurons": 64,
+            "optimizer": "momentum", "lr": 0.001, "wd": 0.0005, "epochs": 6
+        },
+        {
+            "name": "Config_3", "num_layers": 3, "hidden_neurons": 64,
+            "optimizer": "nag", "lr": 0.001, "wd": 0.0, "epochs": 10
+        }
+    ]
+
+    for cfg in configs:
+        run = wandb.init(
+            project='DA6401_ED21D022_Homework1',
+            name=f"Fashion_{cfg['name']}",
+            config=cfg
+        )
+
+        hidden_sizes = [cfg['hidden_neurons']] * cfg['num_layers']
+        model = NeuralNetwork(784, hidden_sizes, 10, "relu", "xavier")
+
+        if cfg['optimizer'] == 'nag':
+            opt = NAG(lr=cfg['lr'], weight_decay=cfg['wd'])
+        elif cfg['optimizer'] == 'momentum':
+            opt = Momentum(lr=cfg['lr'], weight_decay=cfg['wd'])
+        else:
+            opt = SGD(lr=cfg['lr'], weight_decay=cfg['wd'])
+
+        loss_fn = CrossEntropy()
+
+        for epoch in range(cfg['epochs']):
+            logits = model.forward(X_train)
+            loss_fn(logits, y_train_oh)
+            model.backward(loss_fn.derivative())
+            opt.update(model.layers)
+
+            test_logits = model.forward(X_test)
+            test_preds = np.argmax(test_logits, axis=1)
+            test_acc = np.mean(test_preds == y_test)
+
+            wandb.log({"epoch": epoch + 1, "test_accuracy": test_acc})
+            print(f"Epoch {epoch+1}: {test_acc:.4f}")
+
+        run.finish()
+
+run_fashion_transfer_challenge()
