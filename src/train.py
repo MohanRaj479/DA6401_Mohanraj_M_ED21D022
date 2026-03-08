@@ -1,6 +1,6 @@
 
 import os
-os.environ["WANDB_MODE"] = "offline" 
+os.environ["WANDB_MODE"] = "disabled"
 
 import argparse
 import numpy as np
