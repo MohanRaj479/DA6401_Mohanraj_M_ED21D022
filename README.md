@@ -15,7 +15,7 @@ Install Keras:
 - Model Impact: Noted that visual similarity increases the probability of high-confidence misclassifications, requiring higher model capacity or better regularization.
 - Data Prep: Integrated class-wise sampling logic to automate the exploration process directly from the NumPy arrays.
   
-  The wandb report link for the MNIST samples visulaization https://wandb.ai/mohan6rj-indian-institute-technology-madras/DA6401_ED21D022_Homework1/runs/qw9ga45v/panel/kqf3jscun?nw=nwusermohan6rj
+  The wandb report link for the MNIST samples visulaization can be seen [here](https://wandb.ai/mohan6rj-indian-institute-technology-madras/DA6401_ED21D022_Homework1/runs/qw9ga45v/panel/kqf3jscun?nw=nwusermohan6rj)
 
 # 2.2 Hyperparameter Sweep
 # Approach
@@ -96,4 +96,4 @@ Code link available for this question is below - https://github.com/MohanRaj479/
 
 
 # wnandb report link: 
-https://wandb.ai/mohan6rj-indian-institute-technology-madras/DA6401_ED21D022_Homework1/reports/DA6401_Weights-Biases-Report_Homework1--VmlldzoxNjEzMzczNw/edit?draftId=VmlldzoxNjEzMzczNw==
+[ED21D022_wandb report](https://wandb.ai/mohan6rj-indian-institute-technology-madras/DA6401_ED21D022_Homework1/reports/DA6401_Weights-Biases-Report_Homework1--VmlldzoxNjEzMzczNw/edit?draftId=VmlldzoxNjEzMzczNw==)
