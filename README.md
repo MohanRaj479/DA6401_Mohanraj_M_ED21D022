@@ -96,4 +96,4 @@ Code link available for this question is below - https://github.com/MohanRaj479/
 
 
 # wnandb report link: 
-[ED21D022_wandb report](https://wandb.ai/mohan6rj-indian-institute-technology-madras/DA6401_ED21D022_Homework1/reports/DA6401_Weights-Biases-Report_Homework1--VmlldzoxNjEzMzczNw/edit?draftId=VmlldzoxNjEzMzczNw==)
+[ED21D022_wandb report](https://wandb.ai/mohan6rj-indian-institute-technology-madras/DA6401_ED21D022_Homework1/reports/DA6401_Weights-Biases-Report_Homework1--VmlldzoxNjEzNDUxMg)
