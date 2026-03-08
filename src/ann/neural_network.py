@@ -30,6 +30,8 @@ class NeuralNetwork:
         hidden_sizes = get_arg('hidden_size', [128, 128, 128])
         if isinstance(hidden_sizes, int):
             hidden_sizes = [hidden_sizes] * get_arg('num_layers', 1)
+        elif isinstance(hidden_sizes, list) and len(hidden_sizes) == 1:
+            hidden_sizes = hidden_sizes * get_arg('num_layers', 1)
 
         activation_name = get_arg('activation', 'tanh')
         weight_init = get_arg('weight_init', 'xavier')
