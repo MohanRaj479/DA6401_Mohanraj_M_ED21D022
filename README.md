@@ -4,8 +4,8 @@ This is a part of DA6401 - Introduction to Deep Learning course Assignment
 # Assignment 1: Multi-Layer Perceptron for Image Classification
 
 # Installation
-Install wandb: \\
-Install Numpy:\\
+Install wandb: 
+Install Numpy:
 Install Keras:
 
 # 2.1 Data Exploration and Class Distribution
