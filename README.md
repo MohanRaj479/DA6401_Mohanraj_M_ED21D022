@@ -94,7 +94,6 @@ Code link available for this question is - https://github.com/MohanRaj479/DA6401
 
 Code link available for this question is below - https://github.com/MohanRaj479/DA6401_Mohanraj_M_ED21D022/blob/main/10_fashion_MNIST
 
-# train.py
 
 # wnandb report link: 
 https://wandb.ai/mohan6rj-indian-institute-technology-madras/DA6401_ED21D022_Homework1/reports/DA6401_Weights-Biases-Report_Homework1--VmlldzoxNjEzMzczNw/edit?draftId=VmlldzoxNjEzMzczNw==
