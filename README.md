@@ -10,7 +10,7 @@ Install Keras:
 
 # 2.1 Data Exploration and Class Distribution
 # Approach
-- Visualization Strategy: Utilized wandb.Table to log 5 sample images per class, ensuring a balanced view of the dataset's diversity.
+- Visualization Strategy: Utilized wandb.Table to log 5 sample images per class, ensuring a balanced view of the MNIST dataset's diversity.
 - Similarity Mapping: Identified visual overlaps in classes such as 4/9 and 3/5 in MNIST.
 - Model Impact: Noted that visual similarity increases the probability of high-confidence misclassifications, requiring higher model capacity or better regularization.
 - Data Prep: Integrated class-wise sampling logic to automate the exploration process directly from the NumPy arrays.
