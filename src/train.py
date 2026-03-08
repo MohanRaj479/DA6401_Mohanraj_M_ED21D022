@@ -1,7 +1,3 @@
-"""
-Main Training Script
-Entry point for training neural networks with command-line arguments
-"""
 
 import os
 os.environ["WANDB_MODE"] = "offline" 
@@ -30,7 +26,7 @@ def parse_arguments():
     parser.add_argument('--activation', type=str, default='tanh', choices=['relu', 'sigmoid', 'tanh'])
     parser.add_argument('--loss', type=str, default='cross_entropy', choices=['cross_entropy', 'mse'])
     parser.add_argument('--weight_init', type=str, default='xavier')
-    parser.add_argument('--wandb_project', type=str, default='DA6401_Assignment_1_ee21d063')
+    parser.add_argument('--wandb_project', type=str, default='DA6401_ED21D022_Homework1')
     
     parser.add_argument('--model_save_path', type=str, default='saved_model.npy')
     
