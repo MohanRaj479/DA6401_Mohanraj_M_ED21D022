@@ -16,6 +16,7 @@ Install Keras:
 - Data Prep: Integrated class-wise sampling logic to automate the exploration process directly from the NumPy arrays.
 
 # 2.2 Hyperparameter Sweep
+# Approach
 - Sweep Configuration: Define a dictionary containing ranges for learning_rate, batch_size, optimizer, and activation for wandb.sweep().
 - Grid vs. Random Search: Use method: random to efficiently cover the high-dimensional search space across 100 runs.
 - Parallel Coordinates Plot: Utilize the W&B UI to filter runs, looking for lines that converge at high validation accuracy to identify critical parameters like learning_rate.
