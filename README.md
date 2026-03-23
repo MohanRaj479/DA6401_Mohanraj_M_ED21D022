@@ -95,5 +95,5 @@ Code link available for this question is - https://github.com/MohanRaj479/DA6401
 Code link available for this question is below - https://github.com/MohanRaj479/DA6401_Mohanraj_M_ED21D022/blob/main/10_fashion_MNIST
 
 
-# wnandb report link: 
-[ED21D022_wandb report](https://wandb.ai/mohan6rj-indian-institute-technology-madras/DA6401_ED21D022_Homework1/reports/DA6401_Weights-Biases-Report_Homework1--VmlldzoxNjEzNDUxMg)
+# wandb report link: 
+[ED21D022_wandb report]([https://wandb.ai/mohan6rj-indian-institute-technology-madras/DA6401_ED21D022_Homework1/reports/DA6401_Weights-Biases-Report_Homework1--VmlldzoxNjEzNDUxMg](https://wandb.ai/mohan6rj-indian-institute-technology-madras/DA6401_ED21D022_Homework1/reports/DA6401_Weights-Biases-Report_Homework1--VmlldzoxNjEzNDUxMg?accessToken=h2y4zu16sxej0x4v2qiryz5t7rsbcekxt7k7q197fkzqse3vtzzc75vmzuwrjj5q))
